@@ -5,8 +5,21 @@ import { Home } from "./components/Home";
 
 class App extends React.Component {
 
+    constructor() {
+        super();
+        this.state = {
+            homeLink: "Home"
+        };
+    }
+
     onGreet() {
         alert("Hello");
+    }
+
+    onChangeLinkName(newLinkName) {
+        this.setState({
+            homeLink: newLinkName
+        });
     }
 
     render() {
@@ -14,12 +27,17 @@ class App extends React.Component {
             <div className="container">
                 <div className="row">
                     <div className="col-xs-10 col-xs-offset-1">
-                        <Header homeLink="Home"/>
+                        <Header homeLink={this.state.homeLink}/>
                     </div>
                 </div>
                 <div className="row">
                     <div className="col-xs-10 col-xs-offset-1">
-                        <Home name={"Pradip"} initialAge={35} greet={this.onGreet}/>
+                        <Home
+                            name={"Pradip"}
+                            initialAge={35}
+                            greet={this.onGreet}
+                            changeLink={this.onChangeLinkName.bind(this)}
+                        />
                     </div>
                 </div>
             </div>
