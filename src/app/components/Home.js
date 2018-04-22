@@ -69,7 +69,7 @@ export class Home extends React.Component{
     render() {
         return(
             <div>
-                <p>In a new component Test Manoj</p>
+                <p>In a new component</p>
                 <p>Your name is {this.props.name}, your age is {this.state.age}</p>
                 <p>Status : {this.state.status}</p>
                 <hr/>
